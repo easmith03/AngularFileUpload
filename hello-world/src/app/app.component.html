@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+
+  This is my app<br>
+
+
+  <div class="form-group">
+      <label for="file">Choose File: </label>
+      <input type="file"
+            id="file"
+            (change)="handleFileInput($event.target.files)"/><br>
+      <label for="fname">First Name: </label><input type="text" id="fname" placeholder="enter first name"
+       value="{{firstName}}"
+      (change)="handleFirstNameInput($event.target)"
+      /><br>      
+      <label for="lname">Last Name: </label><input type="text" id="lname" placeholder="enter last name"
+        value="{{lastName}}"
+        (change)="handleLastNameInput($event.target)"
+        /><br>      
+       
+      <button id="submit" (click)="submitButton($event)">Upload</button>  
+  </div>
+
+</div>
+
+
