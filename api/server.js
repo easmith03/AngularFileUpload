@@ -18,10 +18,16 @@ app.get('/', function (req, res) {
 
 console.log(`dir: ${__dirname}`);
 
+/**
+Must have a subdirectory /uploads
+ */
 let uploadFile = multer({
     dest: './uploads/',
   })
   
+/**
+Multer will find the form field "image", and save the file in the /uploads directory 
+*/  
 app.post('/imageUpload', uploadFile.array('image', 1), function(req, res, next) {
   
   console.log(req.files[0]);

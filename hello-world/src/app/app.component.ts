@@ -17,19 +17,20 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Save file field when changed in the html input field
+   */
   handleFileInput(files: FileList) {
     //this.fileToUpload = files.item(0);
     this.uploadFile = files[0]
     console.log('handleFileInput', this.uploadFile);
   }  
 
+  /**
+   * Save Text fields when changed in the html input fields
+   */
   handleFirstNameInput(formChange: any) {
-    //this.fileToUpload = files.item(0);
-    //console.log('handleFirstNameInput', formChange);
     console.log('handleFirstNameInput', formChange.value);
-    //console.log('handleFirstNameInput', formChange.firstName);
-    //console.log('handleFirstNameInput', formChange.lastName);
-    //console.log('handleFirstNameInput', firstName);
     this.firstName = formChange.value;
   }  
   handleLastNameInput(formChange: any) {
@@ -41,6 +42,10 @@ export class AppComponent {
 //    console.log('form', FormData);
 //  }  
 
+  /**
+   * When the submit button is clicked
+   * Build formData and call the api to save the file and text data.
+   */
   submitButton(button: IButton) {
     //this.fileToUpload = files.item(0);
     console.log('button', button);
